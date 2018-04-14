@@ -1,0 +1,12 @@
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Release\FOOTBALL.exe.config
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.csproj.ResolveComReference.cache
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Release\FOOTBALL.exe
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Release\FOOTBALL.pdb
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.Form1.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.Properties.Resources.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.csproj.GenerateResource.Cache
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.exe
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.pdb
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.csprojResolveAssemblyReference.cache
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.AnimatedControl.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Release\FOOTBALL.LineGraph.resources

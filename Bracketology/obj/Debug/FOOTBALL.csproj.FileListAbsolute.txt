@@ -1,0 +1,15 @@
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Debug\FOOTBALL.exe.config
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Debug\FOOTBALL.exe
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Debug\FOOTBALL.pdb
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.csprojResolveAssemblyReference.cache
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.Form1.resources
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.Properties.Resources.resources
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.csproj.GenerateResource.Cache
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.exe
+c:\users\dustin\documents\visual studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.pdb
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.csproj.ResolveComReference.cache
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.AnimatedControl.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.LineGraph.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\FOOTBALL.FormMatchup.resources
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\bin\Debug\CodeJetGeneticAlgorithm.exe.config
+C:\Users\Dustin\Documents\Visual Studio 2013\Projects\FOOTBALL\FOOTBALL\obj\Debug\CodeJet.Properties.Resources.resources
