@@ -22,29 +22,17 @@ namespace FOOTBALL
 
         public static double[] WinsByGame(this BasketballTeam t)
         {
-            double[] wins = new double[t.Matchups.Count];
-            for(int i=0;i<wins.Length;i++)
-                wins[i] = t.Matchups[i].TeamScore - t.Matchups[i].OppScore > 0 ? 1 : 0;
-
-            return wins;
+	    return t.Matchups.Map(m => m.TeamScore - m.OppScore > 0 ? 1 : 0);
         }
 
         public static double[] HomeGames(this BasketballTeam t)
         {
-            double[] wins = new double[t.Matchups.Count];
-            for (int i = 0; i < wins.Length; i++)
-                wins[i] = t.Matchups[i].Home ? 1 : 0;
-
-            return wins;
+	    return t.Matchups.Map(m => m.Home ? 1 : 0);
         }
 
         public static double[] AwayGames(this BasketballTeam t)
         {
-            double[] wins = new double[t.Matchups.Count];
-            for (int i = 0; i < wins.Length; i++)
-                wins[i] = t.Matchups[i].Home ? 0 : 1;
-
-            return wins;
+	    return t.Matchups.Map(m => m.Home ? 0 : 1);
         }
 
         public static double[] FieldGoalsTakenByGame(this BasketballTeam t)

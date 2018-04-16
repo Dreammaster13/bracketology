@@ -6,50 +6,6 @@ using System.Threading.Tasks;
 
 namespace FOOTBALL
 {
-    public class DeferredInt<T>
-    {
-        private Func<T, int> m_Func;
-
-        private int? m_Value = null;
-
-        public int Value(T t)
-        {
-            if (m_Value == null)
-            {
-                m_Value = m_Func(t);
-            }
-
-            return (int)m_Value;
-        }
-
-        public DeferredInt(Func<T,int> f)
-        {
-            m_Func = f;
-        }
-    }
-
-    public class DeferredDouble<T>
-    {
-        private Func<T,double> m_Func;
-
-        private double? m_Value = null;
-
-        public double Value(T t)
-        {
-            if (m_Value == null)
-            {
-                m_Value = m_Func(t);
-            }
-
-            return (double)m_Value;
-        }
-
-        public DeferredDouble(Func<T, double> f)
-        {
-            m_Func = f;
-        }
-    }
-
     public class Player
     {
         public Team Team;
@@ -78,7 +34,7 @@ namespace FOOTBALL
         public List<BasketballPerformance> Performances;
 		public string Class, BirthDate, BirthCity, Nationality, HighSchool;
 
-        private DeferredDouble<BasketballPlayer> m_MIN = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_MIN = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                 return (double)p.MIN_T / p.Performances.Count;
@@ -93,7 +49,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_PPG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_PPG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                 return (double)p.PTS / p.Performances.Count;
@@ -108,7 +64,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_RPG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_RPG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                 return (double)p.REB / p.Performances.Count;
@@ -123,7 +79,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_APG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_APG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                 return (double)p.AST / p.Performances.Count;
@@ -138,7 +94,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_SPG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_SPG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                 return (double)p.STL / p.Performances.Count;
@@ -153,7 +109,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_BPG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_BPG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                     return (double)p.BLK / p.Performances.Count;
@@ -168,7 +124,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_TPG = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_TPG = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.Performances.Count > 0)
                     return (double)p.TO / p.Performances.Count;
@@ -183,7 +139,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_FGP = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_FGP = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.FGA > 0)
                     return (double)p.FGM / p.FGA;
@@ -198,7 +154,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_FTP = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_FTP = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.FTA > 0)
                     return (double)p.FTM / p.FTA;
@@ -213,7 +169,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredDouble<BasketballPlayer> m_P3P = new DeferredDouble<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,double> m_P3P = new Lazy<BasketballPlayer,double>(p =>
         {
             if (p.A3P > 0)
                     return (double)p.M3P / p.A3P;
@@ -228,7 +184,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_MIN_T = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_MIN_T = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -244,7 +200,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_FGM = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_FGM = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -260,7 +216,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_FGA = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_FGA = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -276,7 +232,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_FTM = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_FTM = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -292,7 +248,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_FTA = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_FTA = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -308,7 +264,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_M3P = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_M3P = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -324,7 +280,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_A3P = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_A3P = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -340,7 +296,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_PTS = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_PTS = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -356,7 +312,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_OFFR = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_OFFR = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -372,7 +328,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_DEFR = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_DEFR = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -388,7 +344,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_REB = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_REB = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -404,7 +360,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_AST = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_AST = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -420,7 +376,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_TO = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_TO = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -436,7 +392,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_STL = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_STL = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -452,7 +408,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_BLK = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_BLK = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)
@@ -468,7 +424,7 @@ namespace FOOTBALL
             }
         }
 
-        private DeferredInt<BasketballPlayer> m_Starts = new DeferredInt<BasketballPlayer>(p =>
+        private Lazy<BasketballPlayer,int> m_Starts = new Lazy<BasketballPlayer,int>(p =>
         {
             int total = 0;
                 foreach (BasketballPerformance q in p.Performances)

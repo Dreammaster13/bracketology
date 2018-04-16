@@ -29,6 +29,18 @@ namespace FOOTBALL
             return newList;
         }
 
+	public static U[] Map<T,U>(this T[] list, Func<T,U> f)
+	{
+	    U[] newList = new U[list.length];
+
+	    for(int k = 0; k < list.length; k++)
+	    {
+		newList[k] = f(list[k]);
+	    }
+
+	    return newList;
+	}
+
         public static T[] Intersperse<T>(this T[] list, T intersperser)
         {
             int len = list.Length - 1;
